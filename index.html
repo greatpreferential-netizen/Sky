@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光遇账号价值评估系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-star"></i> 光遇账号价值评估</h1>
+            <p>准确评估您的《Sky: Children of the Light》游戏账号价值</p>
+        </div>
+        
+        <div class="content">
+            <form id="valuationForm">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="server">
+                            <i class="fas fa-server"></i>
+                            选择区服
+                        </label>
+                        <select name="server" id="server">
+                            <option value="ios">iOS</option>
+                            <option value="android_official">安卓官服</option>
+                            <option value="huawei">华为渠道服</option>
+                            <option value="oppo">OPPO渠道服</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-graduation-cap"></i>
+                        已毕业季节
+                    </label>
+                    <div class="checkbox-section">
+                        <div class="section-title">
+                            <h3>选择所有已毕业的季节</h3>
+                            <div class="counter">已选择: <span id="seasonCounter">0</span></div>
+                        </div>
+                        
+                        <!-- 季节分页控件 -->
+                        <div id="seasonsPagination" class="pagination">
+                            <button type="button" class="page-btn prev" title="上一页"></button>
+                            <button type="button" class="page-btn next" title="下一页"></button>
+                        </div>
+                        
+                        <div id="seasons" class="checkbox-container"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-gift"></i>
+                        已拥有礼包
+                    </label>
+                    <div class="checkbox-section">
+                        <div class="section-title">
+                            <h3>选择所有已拥有的礼包</h3>
+                            <div class="counter">已选择: <span id="giftCounter">0</span></div>
+                        </div>
+                        
+                        <!-- 礼包分页控件 -->
+                        <div id="giftsPagination" class="pagination">
+                            <button type="button" class="page-btn prev" title="上一页"></button>
+                            <button type="button" class="page-btn next" title="下一页"></button>
+                        </div>
+                        
+                        <div id="gifts" class="checkbox-container"></div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-calculate">
+                        <i class="fas fa-calculator"></i>
+                        计算价值
+                    </button>
+                    <button type="button" class="btn btn-reset">
+                        <i class="fas fa-redo-alt"></i>
+                        重置
+                    </button>
+                </div>
+                
+                <div id="result" style="display: none;">
+                    <div class="result-header">
+                        <h2><i class="fas fa-chart-line"></i> 评估结果</h2>
+                    </div>
+                    <div class="result-content">
+                        <div class="result-item">
+                            <span class="result-label">区服:</span>
+                            <span id="serverName"></span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">基础价值:</span>
+                            <span id="serverBase">0</span> 元
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">毕业季节数:</span>
+                            <span id="seasonCount">0</span> 个
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">季节总价值:</span>
+                            <span id="seasonTotal">0</span> 元
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">拥有礼包数:</span>
+                            <span id="giftCount">0</span> 个
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">礼包总价值:</span>
+                            <span id="giftTotal">0</span> 元
+                        </div>
+                        <div class="total-price">
+                            <i class="fas fa-coins"></i>
+                            账号总价值: <span id="totalPrice">0</span> 元
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
